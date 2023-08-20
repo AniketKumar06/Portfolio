@@ -1,9 +1,14 @@
-import { connect } from "mongoose";
+'use strict'
+
+import { connect } from 'mongoose';
 import { config } from 'dotenv';
 
 config({
-    path :'../../config/config.env'
+    path: '../config.env', // load env variables in development mode only!
 })
+
+
+console.log(process.env.MONGO_DB);
 
 const connectDB = async () => {
     try {
