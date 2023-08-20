@@ -1,12 +1,15 @@
 import {createServer } from 'http';
 import color from 'colors'
 import { config } from 'dotenv';
+import app  from './app.js';
 
 // config env file with dotenv 
 
 config({
     path:'./config/config.env'
 })
+
+
 
 const server = createServer(app);
 
