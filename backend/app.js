@@ -1,7 +1,8 @@
 import { Router } from "express";
-import connectDB from "./config/connection.js";
+import connectDB from "./config/database/connection.js";
 const app  = Router();
 
 
-connectDB();
+
+connectDB(); 
 export default app;
