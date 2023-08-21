@@ -1,6 +1,6 @@
 import { Schema ,model} from 'mongoose';
 
-const adminModelsSchema = new Schema({
+const adminModelSchema = new Schema({
     name:{
       type:String,
       required:true  
@@ -25,5 +25,5 @@ const adminModelsSchema = new Schema({
 }, { timestamps: true });
 
 
-export default model("adminModels", adminModelsSchema);
+export default model("admin", adminModelSchema);
 

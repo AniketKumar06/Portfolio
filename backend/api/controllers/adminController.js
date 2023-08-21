@@ -1,4 +1,4 @@
-import adminModels from '../models/adminModels.js';
+import admin from '../models/adminModels.js';
 
 export const adminRegisterController = async (req, res, next) => {
     const { name, email, phone, password } = req.body;
