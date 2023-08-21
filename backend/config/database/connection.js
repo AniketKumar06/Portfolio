@@ -1,7 +1,11 @@
 'use strict'
 
 import { connect } from 'mongoose';
+import { config } from 'dotenv';
 
+config({
+    path :'../config/config.env'
+})
 const connectDB = async ()=> {
     try {
         const conn = await connect(`mongodb+srv://admin:admin123@portfolio.4ucawcx.mongodb.net/?retryWrites=true&w=majority`);
