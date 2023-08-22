@@ -6,7 +6,7 @@ import app  from './app.js';
 // config env file with dotenv 
 
 config({
-    path:'./config/config.env'
+    path:'./.env'
 })
 
 
