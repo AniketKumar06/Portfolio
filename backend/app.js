@@ -1,9 +1,9 @@
 import express from 'express';
 import morgan from 'morgan';
-import bodyParser from 'body-parser';
-import connectDB from './config/database/connection.js';
 
-import adminRouter from './api/routes/adminRoute.js';
+import connectDB from './config/db.js';
+
+import adminRoutes from './api/routes/admin/adminRoutes.js';
 
 /**Creating app */
 const app = express.Router();
@@ -12,13 +12,12 @@ const app = express.Router();
 app.use(morgan('dev'));
 
 /**Creating  middleware */
-// app.use(express.json({}));
-// app.use(express.json({
-//     extended: false
-// }));
+app.use(express.json({}));
+app.use(express.json({
+    extended: false
+}));
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+
 
 
 /**Linking Database!! */
@@ -27,7 +26,7 @@ connectDB();
 
 /** creating api using middleware*/
 
-app.use('/api/v1/auth', adminRouter);
+app.use('/api/v1/auth', adminRoutes);
 
 /**
  * Error Handling While Enter Wrong URL 
