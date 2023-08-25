@@ -36,14 +36,14 @@ export const adminRegister = async ( req , res, next)=> {
 
         if (exit) {
             return res.status(202).json({
-                success: "User already Exit",
-                msg: exit
+                success: true,
+                msg: " Already Admin Exist!!"
             });
         }
 
 
         let newAdmin = await adminModels.create(req.body);
-        res.json({
+        res.status(statusCode()).json({
             success: true,
             message: 'Admin Register successfully',
             student: newAdmin
