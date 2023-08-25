@@ -6,9 +6,10 @@ import app  from './app.js';
 // config env file with dotenv 
 
 config({
-    path:'./.env'
+    path:'./config/config.env'
 })
 
+try{
 
 
 const server = createServer(app);
@@ -19,3 +20,7 @@ server.listen(PORT,()=>{
     console.log(`Server is under ${process.env.DEV_MODE} and Running on ${PORT}`.blue.underline)
 
 })
+}
+catch(error){
+    console.log("Server is not running due Server Internal Error!")
+}

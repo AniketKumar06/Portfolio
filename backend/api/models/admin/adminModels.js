@@ -3,21 +3,21 @@ import { Schema , model, trusted } from "mongoose";
 const adminSchema = new Schema({
     name:{
         type:String,
-        required:true,
+        require:true,
     },
     email:{
         type:String,
-        required : true,
+        require : true,
         unique :true
     },
     phone:{
-        type:Number,
-        required:true,
+        type:String,
+        require:true,
         unique:true
     },
     password:{
         type:String,
-        required:true
+        require:true
     }
 });
 
