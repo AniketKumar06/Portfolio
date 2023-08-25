@@ -1,29 +1,29 @@
-import express from 'express';
+
 import adminModels from "../../models/admin/adminModels.js";
 
-export const adminRegister = async ( request , response, next)=> {
-    const { name, email, phone, password } = request.body;
+export const adminRegister = async ( req , res, next)=> {
+    const { name, email, phone, password } = req.body;
     try {
         if (!name) {
-            return response.status(500).json({
+            return res.status(500).json({
                 sucess: false,
                 msg: "Name is Required"
             });
         }
         if (!email) {
-            return response.status(500).json({
+            return res.status(500).json({
                 sucess: false,
                 msg: "Email is Required"
             });
         }
         if (!phone) {
-            return response.status(500).json({
+            return res.status(500).json({
                 sucess: false,
                 msg: "Phone is Required"
             });
         }
         if (!password) {
-            return response.status(500).json({
+            return res.status(500).json({
                 sucess: false,
                 msg: "Password is Required"
             });
@@ -35,7 +35,7 @@ export const adminRegister = async ( request , response, next)=> {
         });
 
         if (exit) {
-            return response.status(202).json({
+            return res.status(202).json({
                 success: "User already Exit",
                 msg: exit
             });
