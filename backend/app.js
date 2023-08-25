@@ -1,7 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 
-import connectDB from './config/db.js';
+import connectDB from './config/database/db.js';
 
 import adminRoutes from './api/routes/admin/adminRoutes.js';
 
@@ -32,9 +32,9 @@ app.use('/api/v1/auth', adminRoutes);
  * Error Handling While Enter Wrong URL 
  */
 
-app.use('', async (req, res, next) => {
+app.use('', async (request, response, next) => {
 
-    res.status(500).json({
+    response.status(500).json({
         success: false,
         error: "Bad Respone Enter Url is Wrong!! Please Check!!"
     });
