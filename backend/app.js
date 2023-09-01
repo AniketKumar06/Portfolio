@@ -33,7 +33,7 @@ app.use('/api/v1/auth', adminRoutes);
  */
 
 app.use('', async (req, res, next) => {
-    return res.status(500).json({
+
         success: false,
         error: "Bad Respone Enter Url is Wrong!! Please Check!!"
     });

@@ -36,14 +36,12 @@ export const adminRegister = async ( req , res, next)=> {
 
         if (exit) {
             return res.status(202).json({
-                success: "User already Exit",
-                msg: exit
             });
         }
 
 
         let newAdmin = await adminModels.create(req.body);
-        res.json({
+        res.status(statusCode()).json({
             success: true,
             message: 'Admin Register successfully',
             student: newAdmin
@@ -52,7 +50,18 @@ export const adminRegister = async ( req , res, next)=> {
 
     catch (err) {
         console.log(err);
+        next(err);
     }
 }
 
 
+export const adminFetch = async ( req , res, next)=> {
+    try{
+
+
+    }
+    catch (err) {
+        console.log(err);
+        next(err);
+    }
+}
