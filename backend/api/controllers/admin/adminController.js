@@ -52,7 +52,18 @@ export const adminRegister = async ( req , res, next)=> {
 
     catch (err) {
         console.log(err);
+        next(err);
     }
 }
 
 
+export const adminFetch = async ( req , res, next)=> {
+    try{
+
+
+    }
+    catch (err) {
+        console.log(err);
+        next(err);
+    }
+}
