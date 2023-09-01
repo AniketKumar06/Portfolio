@@ -36,8 +36,6 @@ export const adminRegister = async ( req , res, next)=> {
 
         if (exit) {
             return res.status(202).json({
-                success: true,
-                msg: " Already Admin Exist!!"
             });
         }
 
