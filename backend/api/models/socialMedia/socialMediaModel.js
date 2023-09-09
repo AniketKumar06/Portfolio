@@ -10,9 +10,8 @@ const socialMediaSchema = new mongoose.Schema({
         require:true
     },
     image:{
-        tyoe:String,
-        require: true,
-        unique:true
+        type:String,
+        require: true
     }},
     {
         timestamps: true 

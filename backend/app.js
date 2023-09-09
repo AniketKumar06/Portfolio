@@ -5,6 +5,8 @@ import connectDB from './config/database/db.js';
 
 import adminRoutes from './api/routes/admin/adminRoutes.js';
 
+import socialMediaRoutes  from './api/routes/socialMedia/socialMediaRoutes.js';
+
 /**Creating app */
 const app = express();
 
@@ -26,7 +28,12 @@ connectDB();
 
 /** creating api using middleware*/
 
+/**Action : Admin */
 app.use('/api/v1/auth', adminRoutes);
+
+/**Action : Social Media */
+app.use('/api/v1/auth',socialMediaRoutes);
+
 
 /**
  * Error Handling While Enter Wrong URL 
