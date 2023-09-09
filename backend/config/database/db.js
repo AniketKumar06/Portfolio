@@ -3,11 +3,6 @@
 import { connect } from 'mongoose';
 import MONGO_URL   from '../config.js';
 
-
-
-
-
-
 const connectDB = async()=> {
     try {
         const conn = await connect(MONGO_URL);

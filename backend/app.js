@@ -22,17 +22,16 @@ app.use(express.json({
 
 
 
-/**Linking Database!! */
+/** Linking Database!! */
 connectDB();
+ 
+/** creating api using middleware */
 
+/** Action : Admin */
+app.use('/api/v1/auth/admin', adminRoutes);
 
-/** creating api using middleware*/
-
-/**Action : Admin */
-app.use('/api/v1/auth', adminRoutes);
-
-/**Action : Social Media */
-app.use('/api/v1/auth',socialMediaRoutes);
+/** Action : Social Media */
+app.use('/api/v1/auth/socialmedia',socialMediaRoutes);
 
 
 /**

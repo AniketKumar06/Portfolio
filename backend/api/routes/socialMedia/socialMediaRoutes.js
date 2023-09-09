@@ -7,6 +7,6 @@ const router  = Router();
  * METHOD : POST
 */
 
-router.post('/socialmedia',socialMediaUpload);
+router.post('/upload',socialMediaUpload);
 
 export default router;
